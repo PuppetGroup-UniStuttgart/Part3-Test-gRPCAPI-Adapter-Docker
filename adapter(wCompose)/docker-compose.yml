@@ -1,0 +1,20 @@
+version: '2'
+services:
+   grpc:
+      container_name: grpc
+      build: ../grpc/
+      expose:
+         - "50053"
+
+   localhost:
+      container_name: localhost
+      volumes_from:
+         - grpc:ro
+      build: .
+      links:
+         - grpc
+      environment:
+         - API_HOST=grpc
+         - API_PORT=50053
+      ports:
+         - "8080:8080"
