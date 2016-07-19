@@ -2,8 +2,8 @@ FROM maven:3.3-jdk-7
 
 # Get sources
 WORKDIR /
-RUN git clone --recursive https://github.com/shruthikuki/CloudLab-IAAS-UniStuttgart-Part3-gRPCTest.git
-WORKDIR /CloudLab-IAAS-UniStuttgart-Part3-gRPCTest
+RUN git clone --recursive https://github.com/shruthikuki/UniStuttgart-PuppetGroup-gRPCTest.git
+WORKDIR /UniStuttgart-PuppetGroup-gRPCTest
 
 # Run maven
 RUN mvn clean package
